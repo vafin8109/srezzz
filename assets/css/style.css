@@ -1,0 +1,635 @@
+@font-face {
+    font-family: "Black";
+    src: url(..//fonts/Urbanist-Black.ttf);
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url(..//fonts/Urbanist-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Meduim";
+    src: url(..//fonts/Urbanist-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url(..//fonts/Urbanist-Regular.ttf);
+}
+
+@font-face {
+    font-family: "SemiBold";
+    src: url(..//fonts/Urbanist-SemiBold.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.container {
+    max-width: 1596px;
+    margin: 0 auto;
+}
+
+body {
+    background: var(--Green-97, #FAFDF2);
+}
+
+/* header */
+header {
+    background: var(--Dark-Green-15, #1A3129);
+    padding: 20px 0;
+
+}
+
+.header-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__elem {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu__btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.menu__btn:hover {
+    color: #ffcc00;
+}
+
+/* Стили для подменю */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    color: white;
+    padding: 30px 0px;
+}
+
+.menu__elem:hover .submenu {
+    display: block;
+    /* Показываем подменю при наведении */
+    animation: fadeIn 0.3s;
+    /* Анимация появления */
+}
+
+.submenu__wrapper {
+    padding: 10px;
+}
+
+.submenu__elem {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 10px;
+    transition: background-color 0.3s;
+}
+
+.submenu__elem:hover {
+    background-color: #f0f0f0;
+}
+
+/* header */
+
+/* banner */
+.banner-text {
+    padding-top: 200px;
+    padding-bottom: 80px;
+}
+
+.banner-text h1 {
+    text-align: center;
+    color: var(--Grey-15, #262626);
+    font-family: "Bold";
+    font-size: 48px;
+    line-height: 150%;
+}
+
+.banner-text p {
+    color: var(--Grey-20, #333);
+    text-align: center;
+    font-family: "Meduim";
+    font-size: 18px;
+    line-height: 150%;
+    padding-top: 10px;
+}
+
+/* banner */
+
+/* comment-------- */
+
+/* slider */
+
+.slider {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.slider__body {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__arrow {
+
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    aspect-ratio: 1;
+    background-color: #CBEA7B;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.left {
+    left: 40px;
+}
+
+.right {
+    right: 40px;
+}
+
+.slider__images {
+    display: flex;
+    transition: .3s ease-in;
+}
+
+.slider__item {
+    flex: 0 0 100%;
+}
+
+.slider__item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* .active {
+} */
+
+.slider__nav {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider__dot {
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #E5F5BD;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+
+.slider__dot.active {
+    width: 12px;
+    background-color: black;
+
+}
+
+/* slider end */
+.comment-block {
+    border-radius: 16px;
+    border: 1px solid #EEF8D3;
+}
+
+.comment-text {
+    padding: 40px;
+
+}
+
+.comment-text p {
+    color: var(--Grey-20, #333);
+    font-family: "Meduim";
+    font-size: 18px;
+    text-align: center;
+    line-height: 150%;
+
+}
+
+.comment-img {
+    background: var(--Green-95, #F6FBE9);
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 50px;
+}
+
+.comment-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.comment-img p {
+    color: var(--Dark-Green-15, #1A3129);
+    font-family: "SemiBold";
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.comment-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 187px;
+}
+
+/* comment---------------- */
+
+/* prising */
+.prising-text h2 {
+    color: var(--Grey-15, #262626);
+    text-align: center;
+    font-family: "Bold";
+    font-size: 48px;
+    line-height: 150%;
+}
+
+.prising-text p {
+    padding-top: 10px;
+    color: var(--Grey-20, #333);
+    text-align: center;
+    font-family: "Meduim";
+    font-size: 18px;
+    line-height: 150%;
+    padding-bottom: 80px;
+}
+
+.prising-button {
+    border-radius: 8px;
+    border: 1px solid var(--Green-80, #DCF1A7);
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.but.active {
+    padding: 10px 24px;
+    color: white;
+    font-family: "SemiBold";
+    font-size: 18px;
+    line-height: 150%;
+    border-radius: 6px;
+    background-color: #234338;
+}
+
+.but {
+    color: var(--Grey-30, #4C4C4C);
+    font-family: "SemiBold";
+    font-size: 18px;
+    line-height: 150%;
+    width: 120px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+
+}
+
+.prising-button {
+    width: 233px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.prising-txt p {
+    color: var(--Grey-30, #4C4C4D);
+    text-align: center;
+    font-family: "Meduim";
+    font-size: 18px;
+    line-height: 150%;
+}
+
+/* prising */
+
+/* cards */
+.cards {
+    padding-bottom: 294px;
+    display: none;
+}
+
+.cards.active {
+    display: block;
+}
+
+.card {
+    border-radius: 12px;
+    border: 1px solid var(--Green-90, #EEF8D3);
+    background: var(--Green-95, #F6FBE9);
+    padding: 50px;
+    width: 512px;
+    height: 497px;
+
+}
+
+.cards-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card h3 {
+    color: var(--Grey-15, #262626);
+    font-family: "SemiBold";
+    font-size: 30px;
+    line-height: 150%;
+    padding-bottom: 2px;
+    font-weight: 600;
+
+}
+
+.card h4 {
+    color: var(--Grey-30, #4C4C4D);
+    font-family: "Meduim";
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+}
+
+.card p {
+    color: var(--Grey-15, #262626);
+    font-family: "Meduim";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    padding: 40px 0;
+}
+
+span {
+    color: var(--Dark-Green-25, #2C5446);
+    font-family: "Bold";
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 87.523%;
+}
+
+.card h6 {
+    color: var(--Grey-20, #333);
+    font-family: "Meduim";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    padding-bottom: 33px;
+}
+
+.btn {
+    border-radius: 8px;
+    background: var(--Green-70, #CBEA7B);
+    display: flex;
+    padding: 18px 41px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: var(--Grey-15, #262626);
+    font-family: "SemiBold";
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* cards */
+
+/* phone */
+
+.phone {
+    padding: 20px 25px;
+    border: 2px solid #2C5446;
+    color: #CBEA7B;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+/* phone end */
+
+/* FAQ */
+.faq h2 {
+    color: #262626;
+    text-align: center;
+    font-family: "Bold";
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 75px;
+}
+
+.faq p {
+    padding: 10px 0 80px 0;
+    color: #333;
+    text-align: center;
+    font-family: "Meduim";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.faq-block {
+    border-radius: 12px;
+    border: 1px solid #E5F5BD;
+    background: #F6FBE9;
+    padding: 60px;
+    height: 100%;
+    margin-bottom: 75px;
+}
+
+.faq-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn_faq {
+    width: 48px;
+    aspect-ratio: 1;
+    background-color: #234338;
+    color: white;
+    border-radius: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-card h4 {
+    color: #262626;
+    font-family: "SemiBold";
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    height: 48px;
+}
+
+.faq-card p {
+    color: #333;
+    font-family: "Meduim";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: left;
+    height: 0;
+    overflow: hidden;
+    transition: .2s ease-in;
+}
+
+.str {
+    width: 1476px;
+    height: 1px;
+    background: #E5F5BD;
+    margin: 28px 0;
+}
+
+.faq-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.faq-card .card_item p {
+    display: none;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+}
+
+.faq-card.open .card_item p {
+    display: block;
+}
+
+.btn_faq {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-card.open .btn_faq {
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #1A3129;
+    margin: 15% auto;
+    padding: 71px 40px;
+    border: 1px solid #888;
+    width: 80%;
+    color: white;
+}
+
+.modal_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 141px;
+    background: #234338;
+    border: 1px solid #2C5446;
+    border-radius: 8px;
+}
+
+.modal-com {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.modal_info h2 {
+    align-items: center;
+}
+
+.modall {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
